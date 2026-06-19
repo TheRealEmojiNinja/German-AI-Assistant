@@ -3,3 +3,6 @@ class Vocabulary:
         self.verbs = {}
         self.nouns = {}
         self.adjectives = {}
+
+        self.current_ger = ''
+        self.current_eng = ''
