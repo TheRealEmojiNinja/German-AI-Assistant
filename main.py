@@ -1,9 +1,13 @@
-import Data.vocabulary as v, Data.vocab_loader as vl
+import Data.vocabulary as v, Data.vocab_loader as vl, Systems.verb_system as verb
 
 vocab = v.Vocabulary()
 vl.loadVerbs(vocab)
 vl.loadNouns(vocab)
 vl.loadAdjectives(vocab)
 
+print(verb.obtainVerb(vocab))
 
-print("verbs", vocab.verbs, "\nnouns", vocab.nouns, "\nadjectives", vocab.adjectives)
+running = False
+
+while running:
+    pass
