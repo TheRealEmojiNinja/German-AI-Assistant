@@ -10,6 +10,7 @@ running = True
 
 root = tk.Tk()
 root.geometry("600x600")
+root.config(background='#39006e')
 
 screen = interface.GermanAssistantInterface(root, vocab)
 

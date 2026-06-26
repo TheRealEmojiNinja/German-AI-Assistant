@@ -8,27 +8,30 @@ class GermanAssistantInterface:
 
         self.current_word_type = ""
 
-        self.top_frame = tk.Frame(root, borderwidth=5, relief="groove")
-        self.bottom_frame = tk.Frame(root, borderwidth=5, relief="groove")
+        self.top_frame = tk.Frame(root, borderwidth=5, relief="groove", width=400, height=300, background='#6900cc', padx=20, pady=20)
+        self.bottom_frame = tk.Frame(root, borderwidth=5, relief="groove", width=400, height=300, background='#6900cc', padx=20, pady=20)
 
         self.top_frame.pack()
         self.bottom_frame.pack()
 
-        self.start_label = tk.Label(self.top_frame, text="Welcome! Choose one of the buttons below: ", font=('Courier', 12, 'bold'))
-        self.choose_verbs = tk.Button(self.top_frame, text="VERBS", command=lambda:self.question_verb(vocab_data), font=('Courier', 12, 'bold'), padx=20)
-        self.choose_nouns = tk.Button(self.top_frame, text="NOUNS", command=lambda:self.question_noun(vocab_data), font=('Courier', 12, 'bold'), padx=20)
-        self.choose_adjectives = tk.Button(self.top_frame, text="ADJECTIVES", command=lambda:self.question_adjective(vocab_data), font=('Courier', 12, 'bold'), padx=20)
+        self.top_frame.pack_propagate(False)
+        self.bottom_frame.pack_propagate(False)
+
+        self.start_label = tk.Label(self.top_frame, text="Welcome! Choose one of the buttons below: ", font=('Arial Baltic', 12, 'bold'), pady=10, background='#47008a', foreground='#e1e809')
+        self.choose_verbs = tk.Button(self.top_frame, text="VERBS", command=lambda:self.question_verb(vocab_data), font=('Courier', 12, 'bold'), padx=20, background='#47008a', foreground='#e1e809', activebackground='#5900ad', activeforeground='#edf50a')
+        self.choose_nouns = tk.Button(self.top_frame, text="NOUNS", command=lambda:self.question_noun(vocab_data), font=('Courier', 12, 'bold'), padx=20, background='#47008a', foreground='#e1e809', activebackground='#5900ad', activeforeground='#edf50a')
+        self.choose_adjectives = tk.Button(self.top_frame, text="ADJECTIVES", command=lambda:self.question_adjective(vocab_data), font=('Courier', 12, 'bold'), padx=20, background='#47008a', foreground='#e1e809', activebackground='#5900ad', activeforeground='#edf50a')
 
         self.start_label.grid(row=0,column=0,columnspan=3)
         self.choose_verbs.grid(row=1,column=0)
         self.choose_nouns.grid(row=1,column=1)
         self.choose_adjectives.grid(row=1,column=2)
 
-        self.question_label = tk.Label(self.bottom_frame, text="The question type will appear here.", font=('Courier', 12, 'bold'))
-        self.word_label = tk.Label(self.bottom_frame, text="The word will appear here.", font=('Courier', 8))
-        self.entry_box = tk.Entry(self.bottom_frame)
-        self.result_label = tk.Label(self.bottom_frame, text='Your answer will be checked here!', font=('Courier', 12))
-        self.submit_button = tk.Button(self.bottom_frame, text="Choose a word type!", state="disabled", command=lambda:self.verify_answer(vocab_data), font=('Courier', 14))
+        self.question_label = tk.Label(self.bottom_frame, text="The question type will appear here.", font=('Arial Baltic', 12, 'bold'), background='#47008a', foreground='#e1e809', pady=15)
+        self.word_label = tk.Label(self.bottom_frame, text="The word will appear here.", font=('Arial Baltic', 14, 'bold'), background='#47008a', foreground='#e1e809', pady=15)
+        self.entry_box = tk.Entry(self.bottom_frame, background='#47008a', foreground='#e1e809', width=20, font=('Arial Baltic', 16, 'bold'))
+        self.result_label = tk.Label(self.bottom_frame, text='Your answer will be checked here!', font=('Arial Baltic', 12, 'bold'), background='#47008a', foreground='#e1e809', pady=15)
+        self.submit_button = tk.Button(self.bottom_frame, text="Choose a word type!", state="disabled", command=lambda:self.verify_answer(vocab_data), font=('Arial Baltic', 14, 'bold'), background='#47008a', foreground='#e1e809', activebackground='#5900ad', activeforeground='#edf50a', pady=15)
 
         self.question_label.pack()
         self.word_label.pack()
